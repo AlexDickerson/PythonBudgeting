@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+{% block title %}
+Retirement Planner
+{% endblock %}
+{% block content %}
+<p>Contact page for the Visual Studio Code Flask tutorial.</p>
+<div class="slidecontainer">
+    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+    <p>Value: <span id="demo"></span></p>
+</div>
+<div class="chart-container" style="position: relative; height:40vh; width:80vw"> 
+    <canvas id="line-chart"></canvas>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script>
+    var data = {{data}};
+    var label = {{labels}}
+    var test = new Chart(document.getElementById("line-chart"), {
+        type: 'line',
+        data: {
+            labels: label,
+            datasets: [{ 
+                data: data,
+                label: "Africa",
+                borderColor: "#3e95cd",
+                fill: false
+            }
+            ]
+        },
+        options: {
+            title: {
+            display: true,
+            text: 'World population per region (in millions) get' + document.getElementById("demo"),
+            maintainAspectRatio: true,
+            responsive: true
+            }
+        }
+    });
+</script>
+<script>
+    var slider = document.getElementById("myRange");
+    var output = document.getElementById("demo");
+    output.innerHTML = slider.value; // Display the default slider value
+
+    // Update the current slider value (each time you drag the slider handle)
+    slider.oninput = function() {
+        output.innerHTML = this.value;
+
+        var data = {{data}};
+        var label = {{labels}}
+        var test = new Chart(document.getElementById("line-chart"), {
+            type: 'line',
+            data: {
+                labels: label,
+                datasets: [{ 
+                    data: data,
+                    label: "Africa",
+                    borderColor: "#3e95cd",
+                    fill: false
+                }
+                ]
+            },
+            options: {
+                title: {
+                display: true,
+                text: 'Income Over Time' + output.innerHTML
+                }
+            }
+        });
+    }
+</script>
+{% endblock %}
