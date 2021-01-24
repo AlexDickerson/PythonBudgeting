@@ -1,0 +1,8 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "",
+    "FUNCTIONS_WORKER_RUNTIME": "python",
+    "adbudgetstroage_STORAGE": "DefaultEndpointsProtocol=https;AccountName=adbudgetstroage;AccountKey=Qqo1DKAH9gfKE5IP0UDqi9Nd1+TsuZzTH87XoofjENlL37WXlFt+OQROZ/VwS+V5knykkHZXBFsxycYIP8edkg==;EndpointSuffix=core.windows.net"
+  }
+}
