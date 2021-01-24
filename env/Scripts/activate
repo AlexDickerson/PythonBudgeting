@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\v-jodic\source\repos\Personal Projects\PythonBudgeting\env"
+VIRTUAL_ENV="C:\Users\Alex\Documents\Source\PythonBudgeting\env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
